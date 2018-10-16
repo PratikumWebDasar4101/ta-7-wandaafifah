@@ -3,9 +3,6 @@
 require_once("db.php");
 
 
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -14,9 +11,9 @@ require_once("db.php");
 <table>
 
 <td>
-   <form action="search.php" method="get">
+   <form action="search.php" method="GET">
                     <input type="text" name="cari" placeholder="Cari Nim Mahasiswa">
-                    <input type="submit" name="Cari">
+                    <input type="submit" name="Cari" value="Cari">
             
         </form>
 </td>
@@ -35,8 +32,8 @@ if(mysqli_num_rows($result) > 0){
         <tr>
             <td><?php echo $row['nama']?></td>
             <td><?php echo $row['nim']?></td>
-            <td> <a href="delete.php?id=<?php echo $row['id']?>">delete</a>
-
+            <td> <a href="delete.php?id=<?php echo $row['id']?>">Delete</a>
+                <a href="detail.php?id=<?php echo $row['id']?>"> Detail </a></td>
             </tr>
             <?php
     }
